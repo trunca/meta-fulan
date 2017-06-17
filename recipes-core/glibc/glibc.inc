@@ -8,6 +8,8 @@ PATH_prepend = "${STAGING_BINDIR_TOOLCHAIN}.${STAGINGCC}:"
 
 TOOLCHAIN_OPTIONS = " --sysroot=${STAGING_DIR_TCBOOTSTRAP}"
 
+TARGET_CC_ARCH += "${LDFLAGS}"
+
 python () {
     opt_effective = "-O"
     for opt in d.getVar('SELECTED_OPTIMIZATION', True).split():
