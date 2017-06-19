@@ -36,11 +36,14 @@ SRC_URI = "${GLIBC_GIT_URI};branch=${SRCBRANCH};name=glibc \
            file://0023-eglibc-Install-PIC-archives.patch \
            file://0025-eglibc-Forward-port-cross-locale-generation-support.patch \
            file://0026-When-disabling-SSE-make-sure-fpmath-is-not-set-to-us.patch \
+           file://0025-Define-DUMMY_LOCALE_T-if-not-defined.patch \
+           file://0026-build_local_scope.patch \
 "
 
 SRC_URI += "\
            file://etc/ld.so.conf \
            file://generate-supported.mk \
+           file://0001-locale-fix-hard-coded-reference-to-gcc-E.patch \
 "
 
 SRC_URI_append_class-nativesdk = "\
@@ -59,8 +62,7 @@ PACKAGES_DYNAMIC = ""
 BUILD_CPPFLAGS = "-I${STAGING_INCDIR_NATIVE}"
 TARGET_CPPFLAGS = "-I${STAGING_DIR_TARGET}${includedir}"
 
-GLIBC_BROKEN_LOCALES = " _ER _ET so_ET yn_ER sid_ET tr_TR mn_MN gez_ET gez_ER bn_BD te_IN es_CR.ISO-8859-1"
-
+GLIBC_BROKEN_LOCALES = ""
 #
 # We will skip parsing glibc when target system C library selection is not glibc
 # this helps in easing out parsing for non-glibc system libraries
@@ -126,6 +128,12 @@ do_compile () {
 		fi
 	fi
 
+}
+
+# Use the host locale archive when built for nativesdk so that we don't need to
+# ship a complete (100MB) locale set.
+do_compile_prepend_class-nativesdk() {
+    echo "complocaledir=/usr/lib/locale" >> ${S}/configparms
 }
 
 require glibc-package.inc

@@ -22,8 +22,6 @@ EXTRA_OECONF_INITIAL ?= ""
 GCCMULTILIB ?= "--disable-multilib"
 GCCTHREADS ?= "posix"
 
-TARGET_CC_ARCH += "${LDFLAGS}"
-
 EXTRA_OECONF = "\
     ${@['--enable-clocale=generic', ''][d.getVar('USE_NLS', True) != 'no']} \
     --with-gnu-ld \
