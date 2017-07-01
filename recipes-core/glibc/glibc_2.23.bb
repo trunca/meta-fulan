@@ -36,6 +36,9 @@ SRC_URI = "${GLIBC_GIT_URI};branch=${SRCBRANCH};name=glibc \
            file://0023-eglibc-Install-PIC-archives.patch \
            file://0025-eglibc-Forward-port-cross-locale-generation-support.patch \
            file://0026-When-disabling-SSE-make-sure-fpmath-is-not-set-to-us.patch \
+           file://0025-Define-DUMMY_LOCALE_T-if-not-defined.patch \
+           file://0026-build_local_scope.patch \
+           file://0001-locale-fix-hard-coded-reference-to-gcc-E.patch \
 "
 
 SRC_URI += "\
@@ -126,6 +129,12 @@ do_compile () {
 		fi
 	fi
 
+}
+
+# Use the host locale archive when built for nativesdk so that we don't need to
+# ship a complete (100MB) locale set.
+do_compile_prepend_class-nativesdk() {
+    echo "complocaledir=/usr/lib/locale" >> ${S}/configparms
 }
 
 require glibc-package.inc
