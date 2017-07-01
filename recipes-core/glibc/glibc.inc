@@ -78,9 +78,3 @@ do_configure_prepend() {
 }
 
 GLIBC_ADDONS ?= "nptl,libidn"
-
-# Enable backtrace from abort()
-do_configure_append_arm () {
-	echo "CFLAGS-abort.c = -fasynchronous-unwind-tables" >> ${B}/configparms
-	echo "CFLAGS-raise.c = -fasynchronous-unwind-tables" >> ${B}/configparms
-}
