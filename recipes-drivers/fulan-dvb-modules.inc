@@ -25,9 +25,7 @@ PTI_NP_PATH ?= "/data/pti_np"
 FILESEXTRAPATHS_prepend := "${THISDIR}/fulan-dvb-modules:"
 
 SRC_URI = " \
-    git://github.com/Taapat/driver.git;protocol=git \
-    file://aotom_spark_procfs_tap.patch;patch=1 \
-    file://enable_pti_np.patch;patch=1 \
+    git://github.com/MastaG/fulan-dvb-drivers.git;protocol=git \
     file://ddbootup \
     file://sh4booster \
     file://modules.conf \
