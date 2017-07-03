@@ -34,6 +34,7 @@ DVBPROVIDER = "kernel"
 
 OPENPLI_FEATURES = "usbconsole"
 MACHINE_FEATURES += "ext2 serial wlan dvb-c hdmicec 3dtv switchoff textlcd fulan singlecore directfb sdl sh4booster legacykernel"
+DISTRO_FEATURES_remove = "x11 wayland"
 
 KERNEL_IMAGETYPE = "uImage"
 #KERNEL_OUTPUT = "${KERNEL_IMAGETYPE}"
