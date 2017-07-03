@@ -22,9 +22,6 @@ EXTRA_OECONF_INITIAL ?= ""
 GCCMULTILIB ?= "--disable-multilib"
 GCCTHREADS ?= "posix"
 
-# Fix for ERROR: QA Issue: No GNU_HASH in the elf binary libgcc_s.so.1
-TARGET_CC_ARCH += "${LDFLAGS}"
-
 EXTRA_OECONF = "\
     ${@['--enable-clocale=generic', ''][d.getVar('USE_NLS', True) != 'no']} \
     --with-gnu-ld \
