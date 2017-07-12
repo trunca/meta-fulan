@@ -28,6 +28,9 @@ PREFERRED_PROVIDER_gstreamer1.0-plugins-ugly = "libeplayer3"
 PREFERRED_PROVIDER_gstreamer1.0-plugins-base = "libeplayer3"
 PREFERRED_PROVIDER_gstreamer1.0-plugins-bad = "libeplayer3"
 
+PREFERRED_PROVIDER_virtual/egl = "libstgles"
+PREFERRED_PROVIDER_virtual/libgles1 = "libstgles"
+
 SERIAL_CONSOLE = "115200 ttyAS0"
 
 DVBPROVIDER = "kernel"
