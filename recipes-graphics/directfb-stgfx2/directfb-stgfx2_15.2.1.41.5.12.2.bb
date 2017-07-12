@@ -25,6 +25,9 @@ do_configure_append() {
 # EXTRA_OEMAKE = "LINUX_SRC=${STAGING_KERNEL_DIR}"
 
 FILES_${PN} += "\
-  ${libdir}/directfb-1.7-7/gfxdrivers/*.la \
   ${libdir}/directfb-1.7-7/gfxdrivers/*.so \
+"
+
+FILES_${PN}-dev += "\
+  ${libdir}/directfb-1.7-7/gfxdrivers/*.la \
 "
