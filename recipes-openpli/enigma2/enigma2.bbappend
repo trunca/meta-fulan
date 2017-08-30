@@ -1,3 +1,7 @@
+DEPENDS_remove_sh4 = " \
+	gstreamer1.0-plugins-base gstreamer1.0 \
+	"
+
 DEPENDS_append_sh4 = " \
 	libmmeimage libmme-host libeplayer3 \
 	"
