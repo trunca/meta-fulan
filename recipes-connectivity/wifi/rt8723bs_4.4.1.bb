@@ -4,8 +4,6 @@ SECTION = "kernel/modules"
 LICENSE = "GPLv2"
 require conf/license/license-gplv2.inc
 
-PR = "r1"
-
 SRC_URI = "https://github.com/anthonywong/rtl8723bs/archive/v${PV}.tar.gz \
     file://rt8723bs-makefile.patch \
     file://rt8723bs-remove-debug.patch \
