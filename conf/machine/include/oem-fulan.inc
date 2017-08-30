@@ -32,7 +32,7 @@ SERIAL_CONSOLE = "115200 ttyAS0"
 DVBPROVIDER = "kernel"
 
 OPENPLI_FEATURES = "usbconsole"
-MACHINE_FEATURES += "ext2 serial wlan dvb-c hdmicec 3dtv switchoff textlcd fulan singlecore directfb sdl sh4booster legacykernel"
+MACHINE_FEATURES += "ext2 serial wlan dvb-c hdmicec 3dtv switchoff textlcd fulan singlecore directfb sh4booster legacykernel"
 DISTRO_FEATURES_remove = "x11 wayland"
 
 KERNEL_IMAGETYPE = "uImage"
@@ -129,6 +129,7 @@ MACHINE_EXTRA_RRECOMMENDS = " \
     rt8812au \
     rtl8192eu \
     ntfs-3g \
+    rt7777-sh4 \
     "
 
 EXTRA_IMAGEDEPENDS += " \
