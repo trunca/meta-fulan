@@ -134,6 +134,7 @@ MACHINE_EXTRA_RRECOMMENDS = " \
     rt8812au \
     rtl8192eu \
     ntfs-3g \
+    rt7777-sh4 \
     "
 
 EXTRA_IMAGEDEPENDS += " \
