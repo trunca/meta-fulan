@@ -4,7 +4,6 @@ require conf/license/license-gplv2.inc
 
 PACKAGE_ARCH = "all"
 RDEPENDS_${PN} = "glibc"
-PR = "r3"
 
 RREPLACES_${PN} = "libcrypto0.9.8 libssl0.9.8"
 RCONFLICTS_${PN} = "libcrypto0.9.8 libssl0.9.8"
