@@ -14,6 +14,7 @@ SRC_URI_append_sh4 = "\
     file://stmfb.h \
     file://stm_ioctls.h \
     file://bpamem.h \
+    file://extra_ipv6_headers.patch \
 "
 
 do_install_append_sh4() {
