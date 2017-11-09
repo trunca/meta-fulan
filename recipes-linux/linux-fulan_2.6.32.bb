@@ -1,23 +1,24 @@
-DESCRIPTION = "Linux kernel from stlinux"
+SUMMARY = "Linux kernel for ${MACHINE}"
 LICENSE = "GPLv2"
 SECTION = "kernel"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
-LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
+
 KV = "2.6.32"
+SRCDATE = "20160701"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 MACHINE_KERNEL_PR_append = ".1"
 
-DEPENDS_spark7162 += " \
+inherit kernel machine_kernel_pr
+
+DEPENDS_append_spark7162 = " \
            stlinux24-sh4-stx7105-fdma-firmware \
 "
 
-DEPENDS_spark += " \
+DEPENDS_append_spark = " \
            stlinux24-sh4-stx7111-fdma-firmware \
 "
-
-inherit kernel machine_kernel_pr
-
-SRCDATE = "20160701"
 
 STM_PATCH_STR = "0217"
 LINUX_VERSION = "2.6.32.71"
@@ -79,16 +80,22 @@ SRC_URI_append_spark = " \
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
-PARALLEL_MAKEINST = ""
 
 export OS = "Linux"
 KERNEL_OBJECT_SUFFIX = "ko"
 KERNEL_IMAGETYPE = "uImage"
 KERNEL_IMAGEDEST = "tmp"
-
-FILES_kernel-image = "/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}"
-
 KEEPUIMAGE = "yes"
+PARALLEL_MAKEINST = ""
+
+# bitbake.conf only prepends PARALLEL make in tasks called do_compile, which isn't the case for compile_modules
+# So explicitly enable it for that in here
+EXTRA_OEMAKE_prepend = " ${PARALLEL_MAKE} "
+
+PACKAGES =+ "kernel-headers"
+FILES_kernel-headers = "${exec_prefix}/src/linux*"
+FILES_kernel-dev += "${includedir}/linux"
+FILES_kernel-image = "/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}"
 
 do_configure_prepend() {
     oe_machinstall -m 0644 ${WORKDIR}/defconfig ${B}/.config
@@ -131,15 +138,6 @@ do_uboot_mkimage() {
     :
 }
 
-FILES_kernel-dev += "${includedir}/linux"
-
-# bitbake.conf only prepends PARALLEL make in tasks called do_compile, which isn't the case for compile_modules
-# So explicitly enable it for that in here
-EXTRA_OEMAKE = "${PARALLEL_MAKE} "
-
-PACKAGES =+ "kernel-headers"
-FILES_kernel-headers = "${exec_prefix}/src/linux*"
-
 pkg_postinst_kernel-image() {
     if [ "x$D" == "x" ]; then
         if [ -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} ] ; then
@@ -159,3 +157,5 @@ pkg_postinst_kernel-image() {
 do_rm_work() {
 }
 
+# extra tasks
+addtask kernel_link_images after do_compile before do_install
