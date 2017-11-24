@@ -56,11 +56,11 @@ IMAGE_FSTYPES ?= "jffs2"
 
 # enable this for debug
 IMAGE_FSTYPES += "tar.gz"
-IMAGE_FSTYPES += "spark71xx-usbimg"
+IMAGE_FSTYPES += "spark71xxusbimg"
 # INHERIT += "usb_image-spark71xx"
 
 IMAGE_CLASSES += "usb_image-spark71xx"
-INITRAMFS_FSTYPES =  "ext2.gz spark-updt"
+INITRAMFS_FSTYPES =  "ext2.gz sparkupdt"
 
 IMAGE_CMD_jffs2_prepend = " \
     rm -rf ${IMAGE_ROOTFS}/tmp/*; \
