@@ -28,4 +28,6 @@ EXTRA_OECONF_append_sh4 = "\
 
 LDFLAGS_prepend_sh4 = ""
 
+CXXFLAGS_append_sh4 = " -std=gnu++11 "
+
 SRC_URI_sh4 = "${GITHUB_URI}/MastaG/enigma2-openpli-fulan.git;branch=master"
