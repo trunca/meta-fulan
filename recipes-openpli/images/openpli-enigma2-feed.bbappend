@@ -3,4 +3,6 @@ OPTIONAL_PACKAGES_remove_sh4 = " \
 	wscan \
 	gdb \
 	gstplayer \
+	nodejs \
+	smbnetfs \
 	"
