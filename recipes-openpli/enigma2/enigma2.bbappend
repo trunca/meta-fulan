@@ -18,6 +18,13 @@ RDEPENDS_${PN}_append_sh4 = " \
 	libmme-host \
 	"
 
+SRC_URI_remove_sh4 = " \
+	file://use-ioctl-22-for-h265.patch \
+	file://fix-fp-version.patch \
+	file://tryfix-videomode.patch \
+	file://tryfix-snr-si216x-tuners.patch \
+"
+
 EXTRA_OECONF_remove_sh4 = "\
 	--with-gstversion=1.0 \
 	"
