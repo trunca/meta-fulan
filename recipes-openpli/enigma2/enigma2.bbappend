@@ -21,8 +21,7 @@ RDEPENDS_${PN}_append_sh4 = " \
 SRC_URI_remove_sh4 = " \
 	file://use-ioctl-22-for-h265.patch \
 	file://fix-fp-version.patch \
-	file://tryfix-videomode.patch \
-	file://tryfix-snr-si216x-tuners.patch \
+	file://dual-tuner-letter-detection.patch \
 "
 
 EXTRA_OECONF_remove_sh4 = "\
