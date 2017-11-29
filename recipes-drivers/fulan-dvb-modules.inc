@@ -129,6 +129,7 @@ do_install() {
     install -m 644 include/player2/JPEGDECHW_VideoTransformerTypes.h ${D}/${includedir}
     install -m 644 include/player2/PNGDecode_interface.h ${D}/${includedir}
     install -m 644 include/player2/RLEDecode_interface.h ${D}/${includedir}
+    install -m 644 frontcontroller/aotom/aotom_main.h ${D}/${includedir}
     install -m 644 player2/components/include/stddefs.h ${D}/${includedir}
 
     #install modutils config
