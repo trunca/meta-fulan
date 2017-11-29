@@ -24,8 +24,6 @@ STM_PATCH_STR = "0217"
 LINUX_VERSION = "2.6.32.71"
 SRCREV = "b43f8252e9f72e5b205c8d622db3ac97736351fc"
 
-KERNEL_MODULE_PACKAGE_SUFFIX = ""
-
 # By default, kernel.bbclass modifies package names to allow multiple kernels
 # to be installed in parallel. We revert this change and rprovide the versioned
 # package names instead, to allow only one kernel to be installed.
@@ -112,16 +110,16 @@ do_shared_workdir_append() {
     kerneldir=${STAGING_KERNEL_BUILDDIR}
     if [ -f include/linux/bounds.h ]; then
         mkdir -p $kerneldir/include/linux
-        cp include/linux/bounds.h $kerneldir/include/linux/bounds.h
+        cp -f include/linux/bounds.h $kerneldir/include/linux/bounds.h
     fi
     if [ -f include/asm-sh/machtypes.h ]; then
         mkdir -p $kerneldir/include/asm-sh
-        ln -s $kerneldir/include/asm-sh $kerneldir/include/asm
-        cp include/asm-sh/machtypes.h $kerneldir/include/asm-sh
+        ln -sf $kerneldir/include/asm-sh $kerneldir/include/asm
+        cp -f include/asm-sh/machtypes.h $kerneldir/include/asm-sh
     fi
     if [ -e include/linux/utsrelease.h ]; then
         mkdir -p $kerneldir/include/linux
-        cp include/linux/utsrelease.h $kerneldir/include/linux/utsrelease.h
+        cp -f include/linux/utsrelease.h $kerneldir/include/linux/utsrelease.h
     fi
 }
 
