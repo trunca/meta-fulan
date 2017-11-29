@@ -143,6 +143,7 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 EXTRA_IMAGEDEPENDS += " \
     libpcre \
     libstgles \
+    directfb-stgfx2 \
     aio-grab \
     "
 
