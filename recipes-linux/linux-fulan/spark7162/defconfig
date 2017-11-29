@@ -339,10 +339,10 @@ CONFIG_SH_DMA_API=y
 # Kernel features
 #
 # CONFIG_HZ_100 is not set
-CONFIG_HZ_250=y
-# CONFIG_HZ_300 is not set
+# CONFIG_HZ_250 is not set
+CONFIG_HZ_300=y
 # CONFIG_HZ_1000 is not set
-CONFIG_HZ=250
+CONFIG_HZ=300
 # CONFIG_SCHED_HRTICK is not set
 # CONFIG_KEXEC is not set
 # CONFIG_CRASH_DUMP is not set
@@ -422,8 +422,8 @@ CONFIG_IP_PNP=y
 CONFIG_TCP_CONG_CUBIC=y
 CONFIG_DEFAULT_TCP_CONG="cubic"
 # CONFIG_TCP_MD5SIG is not set
-#		
-# IPv6 by TheChip @ SpaceRat		
+#
+# IPv6 by TheChip @ SpaceRat
 #
 CONFIG_IPV6=y
 # CONFIG_IPV6_PRIVACY is not set
