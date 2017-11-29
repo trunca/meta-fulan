@@ -142,6 +142,7 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 
 EXTRA_IMAGEDEPENDS += " \
     libpcre \
+    libstgles \
     aio-grab \
     "
 
