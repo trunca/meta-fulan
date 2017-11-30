@@ -31,6 +31,7 @@ PREFERRED_VERSION_linux-libc-headers = "2.6.32"
 PREFERRED_VERSION_directfb = "1.7.7"
 PREFERRED_VERSION_rt8812au = "4.3.14"
 PREFERRED_VERSION_samba = "3.%"
+PREFERRED_VERSION_qemu = "2.8.0"
 
 PREFERRED_PROVIDER_virtual/egl = "libstgles"
 PREFERRED_PROVIDER_virtual/libgles1 = "libstgles"
