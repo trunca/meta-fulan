@@ -88,7 +88,6 @@ IMAGE_CMD_tar_prepend = " \
 	
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \
     stlinux24-sh4-stx7111-fdma-firmware \
-    stlinux24-sh4-stmfb-firmware-stx7111 \
     stslave-fw \
     ustslave \
     stfbcontrol \
