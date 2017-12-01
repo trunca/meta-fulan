@@ -26,6 +26,9 @@ PREFERRED_PROVIDER_gstreamer1.0-plugins-ugly = "libeplayer3"
 PREFERRED_PROVIDER_gstreamer1.0-plugins-base = "libeplayer3"
 PREFERRED_PROVIDER_gstreamer1.0-plugins-bad = "libeplayer3"
 
+PREFERRED_PROVIDER_lirc = "stlirc"
+PREFERRED_RPROVIDER_lirc = "stlirc"
+
 PREFERRED_PROVIDER_virtual/kernel = "linux-fulan"
 PREFERRED_VERSION_linux-libc-headers = "2.6.32"
 PREFERRED_VERSION_directfb = "1.7.7"

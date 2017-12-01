@@ -13,10 +13,17 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 RCONFLICTS_${PN} = "lirc"
 RCONFLICTS_stlirc-exec = "lirc-exec"
-RCONFLICTS_stlirc-remotes = "lirc-remotes"
+RCONFLICTS_${PN} = "lirc-contrib"
+RCONFLICTS_${PN} = "lirc-plugins"
+RCONFLICTS_${PN} = "lirc-python"
 RREPLACES_${PN} = "lirc"
 RREPLACES_stlirc-exec = "lirc-exec"
-RREPLACES_stlirc-remotes = "lirc-remotes"
+RREPLACES_${PN} = "lirc-contrib"
+RREPLACES_${PN} = "lirc-plugins"
+RREPLACES_${PN} = "lirc-python"
+
+PROVIDES += "lirc"
+RPROVIDES_${PN} += "lirc"
 
 SRC_URI = "http://prdownloads.sourceforge.net/lirc/lirc-${PV}.tar.bz2 \
            file://fix-libusb-config.patch \
