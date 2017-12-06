@@ -1,3 +1,4 @@
-RDEPENDS_${PN}_remove_sh4 = " \
+RRECOMMENDS_${PN}_remove_sh4 = " \
 	gstplayer \
+	gst-ifdsrc \
 	"
