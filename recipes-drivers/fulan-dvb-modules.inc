@@ -16,7 +16,7 @@ inherit module
 
 PACKAGES = "${PN} ${PN}-dev"
 
-INC_PR = "r0"
+INC_PR = "r1"
 PV = "${KV}+${SRCDATE}"
 
 KERNEL_MODULE_PACKAGE_SUFFIX = ""
