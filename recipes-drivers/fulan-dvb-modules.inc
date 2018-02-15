@@ -25,7 +25,7 @@ PTI_NP_PATH ?= "/data/pti_np"
 FILESEXTRAPATHS_prepend := "${THISDIR}/fulan-dvb-modules:"
 
 SRC_URI = " \
-    git://github.com/MastaG/fulan-dvb-drivers.git;protocol=git \
+    git://github.com/PLi-metas/fulan-dvb-drivers.git;protocol=git \
     file://ddbootup \
     file://sh4booster \
     file://modules.conf \

@@ -11,7 +11,7 @@ PV = "2.1+git${SRCPV}"
 PKGV = "2.1+git${GITPKGV}"
 
 SRC_URI = " \
-    git://github.com/MastaG/apps.git;protocol=git \
+    git://github.com/PLi-metas/apps.git;protocol=git \
     file://libtool_dont_stop.patch \
 "
 
